@@ -1,2 +1,6 @@
-add_subdirectory(launcher)
-add_subdirectory(loader)
+if(WIN32)
+  add_subdirectory(launcher)
+  add_subdirectory(loader)
+else()
+  add_subdirectory(linux-loader)
+endif()

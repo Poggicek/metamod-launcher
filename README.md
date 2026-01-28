@@ -8,3 +8,8 @@ Alternative way to load metamod without having to modify game files. If you get 
 
 - extract the contents of the [zip file](https://github.com/Poggicek/metamod-launcher/releases/latest/download/launcher.zip) to the `game/bin/win64` folder where `cs2.exe` is located
 - if you just launch `metamod-launcher.exe`, a dialog window will open prompting you to run the dedicated server or the client with insecure, if you launch the app with command line arguments, it will pass them to `cs2.exe` directly and not open a dialog window (must include -insecure or -dedicated)
+
+### Linux
+
+- drop `libmetamod-loader.so` into `/game` folder where the `cs2.sh` binary is located
+- run the server with `LD_PRELOAD="./libmetamod-loader.so" ./cs2.sh -dedicated`
