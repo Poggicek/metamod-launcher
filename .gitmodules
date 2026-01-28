@@ -1,0 +1,3 @@
+[submodule "vendor/safetyhook"]
+	path = vendor/safetyhook
+	url = https://github.com/cursey/safetyhook
