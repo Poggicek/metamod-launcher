@@ -13,8 +13,10 @@ void __attribute__((visibility("default"))) *dlopen(const char *filename, int fl
 	if(!func)
 		func = (dlopen_t)dlsym(RTLD_NEXT, "dlopen");
 
-	if(filename && strstr(filename, "linuxsteamrt64/libserver.so"))
+	static bool replaced = false;
+	if(!replaced && filename && strstr(filename, "linuxsteamrt64/libserver.so"))
 	{
+		replaced = true;
 		std::filesystem::path newpath = (std::filesystem::path(filename).parent_path() / ".." / ".." / "addons" / "metamod" / "bin" / "linuxsteamrt64" / "libserver.so").lexically_normal();
 		if(!std::filesystem::exists(newpath))
 		{
