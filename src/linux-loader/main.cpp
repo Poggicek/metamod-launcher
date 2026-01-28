@@ -11,7 +11,7 @@ void __attribute__((visibility("default"))) *dlopen(const char *filename, int fl
 	static dlopen_t func;
 
 	if(!func)
-			func = (dlopen_t)dlsym(RTLD_NEXT, "dlopen");
+		func = (dlopen_t)dlsym(RTLD_NEXT, "dlopen");
 
 	if(filename && strstr(filename, "linuxsteamrt64/libserver.so"))
 	{
